@@ -270,45 +270,17 @@
 </library>
 <library name="SM-Resistor">
 <packages>
-<package name="SMD-0805">
+<package name="SMD-2012(0805)">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;</description>
 <smd name="1" x="-0.95" y="0" dx="1.3" dy="1.5" layer="1"/>
 <smd name="2" x="0.95" y="0" dx="1.3" dy="1.5" layer="1"/>
-<text x="-1.905" y="1.27" size="0.8128" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-2.54" size="0.8128" layer="27">&gt;VALUE</text>
+<text x="-2" y="1.5" size="0.8128" layer="25">&gt;NAME</text>
+<text x="-2" y="-1.5" size="0.8128" layer="27" align="top-left">&gt;VALUE</text>
 <rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
 <wire x1="-2" y1="1" x2="2" y2="1" width="0.127" layer="21"/>
 <wire x1="2" y1="1" x2="2" y2="-1" width="0.127" layer="21"/>
 <wire x1="2" y1="-1" x2="-2" y2="-1" width="0.127" layer="21"/>
 <wire x1="-2" y1="-1" x2="-2" y2="1" width="0.127" layer="21"/>
-</package>
-<package name="THT-7MM-RES">
-<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
-type 0207, grid 7.5 mm</description>
-<wire x1="-3.81" y1="0" x2="-3.429" y2="0" width="0.6096" layer="51"/>
-<wire x1="-3.175" y1="0.889" x2="-2.921" y2="1.143" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-3.175" y1="-0.889" x2="-2.921" y2="-1.143" width="0.1524" layer="21" curve="90"/>
-<wire x1="2.921" y1="-1.143" x2="3.175" y2="-0.889" width="0.1524" layer="21" curve="90"/>
-<wire x1="2.921" y1="1.143" x2="3.175" y2="0.889" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-3.175" y1="-0.889" x2="-3.175" y2="0.889" width="0.1524" layer="51"/>
-<wire x1="-2.921" y1="1.143" x2="-2.54" y2="1.143" width="0.1524" layer="21"/>
-<wire x1="-2.413" y1="1.016" x2="-2.54" y2="1.143" width="0.1524" layer="21"/>
-<wire x1="-2.921" y1="-1.143" x2="-2.54" y2="-1.143" width="0.1524" layer="21"/>
-<wire x1="-2.413" y1="-1.016" x2="-2.54" y2="-1.143" width="0.1524" layer="21"/>
-<wire x1="2.413" y1="1.016" x2="2.54" y2="1.143" width="0.1524" layer="21"/>
-<wire x1="2.413" y1="1.016" x2="-2.413" y2="1.016" width="0.1524" layer="21"/>
-<wire x1="2.413" y1="-1.016" x2="2.54" y2="-1.143" width="0.1524" layer="21"/>
-<wire x1="2.413" y1="-1.016" x2="-2.413" y2="-1.016" width="0.1524" layer="21"/>
-<wire x1="2.921" y1="1.143" x2="2.54" y2="1.143" width="0.1524" layer="21"/>
-<wire x1="2.921" y1="-1.143" x2="2.54" y2="-1.143" width="0.1524" layer="21"/>
-<wire x1="3.175" y1="-0.889" x2="3.175" y2="0.889" width="0.1524" layer="51"/>
-<wire x1="3.429" y1="0" x2="3.81" y2="0" width="0.6096" layer="51"/>
-<pad name="1" x="-3.81" y="0" drill="0.8128" shape="octagon"/>
-<pad name="2" x="3.81" y="0" drill="0.8128" shape="octagon"/>
-<text x="-2.54" y="1.397" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.286" y="-0.5588" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="-3.429" y1="-0.3048" x2="-3.175" y2="0.3048" layer="51"/>
-<rectangle x1="3.175" y1="-0.3048" x2="3.429" y2="0.3048" layer="51"/>
 </package>
 </packages>
 <symbols>
@@ -325,27 +297,265 @@ type 0207, grid 7.5 mm</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="RESITOR" prefix="R" uservalue="yes">
+<deviceset name="CRCW0805" prefix="R" uservalue="yes">
+<description>&lt;b&gt;Vishay thick film SMD resistors&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="-SMD-0805" package="SMD-0805">
+<device name="1K00FKTABC" package="SMD-2012(0805)">
 <connects>
 <connect gate="G$1" pin="P$1" pad="1"/>
 <connect gate="G$1" pin="P$2" pad="2"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW08051K00FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="1 kΩ"/>
+</technology>
 </technologies>
 </device>
-<device name="-THT-7MM" package="THT-7MM-RES">
+<device name="10K0FKTABC" package="SMD-2012(0805)">
 <connects>
 <connect gate="G$1" pin="P$1" pad="1"/>
 <connect gate="G$1" pin="P$2" pad="2"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW080510K0FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="10 kΩ"/>
+</technology>
+</technologies>
+</device>
+<device name="100KFKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW0805100KFKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="100 kΩ"/>
+</technology>
+</technologies>
+</device>
+<device name="1K50FKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW08051K50FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="1.5 kΩ"/>
+</technology>
+</technologies>
+</device>
+<device name="39K0FKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW080539K0FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="39 kΩ"/>
+</technology>
+</technologies>
+</device>
+<device name="82R0FKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW080582R0FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="82 Ω"/>
+</technology>
+</technologies>
+</device>
+<device name="220RFKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW080220R5FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="220 Ω"/>
+</technology>
+</technologies>
+</device>
+<device name="4K70FKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW08054K70FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="4.7 kΩ"/>
+</technology>
+</technologies>
+</device>
+<device name="56K0FKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW080556K0FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="56 kΩ"/>
+</technology>
+</technologies>
+</device>
+<device name="15K0JNTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="200 ppm/K"/>
+<attribute name="TME" value="CRCW080515K0JNTABC"/>
+<attribute name="TOLERANCE" value="5%"/>
+<attribute name="VALUE" value="15 kΩ"/>
+</technology>
+</technologies>
+</device>
+<device name="33R0JNTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="200 ppm/K"/>
+<attribute name="TME" value="CRCW080533R0JNTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="33 Ω"/>
+</technology>
+</technologies>
+</device>
+<device name="2K20FKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW08052K20FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="2.2 kΩ"/>
+</technology>
+</technologies>
+</device>
+<device name="49R9FKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW080549R9FKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="49.9 Ω"/>
+</technology>
+</technologies>
+</device>
+<device name="270RFKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTOR" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW0805270RFKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="270 Ω"/>
+</technology>
+</technologies>
+</device>
+<device name="680RFKTABC" package="SMD-2012(0805)">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTOR" value="Vishay"/>
+<attribute name="PACKAGE" value="SMD-2012(0805)"/>
+<attribute name="POWER" value="0.125 W"/>
+<attribute name="TCR" value="100 ppm/K"/>
+<attribute name="TME" value="CRCW0805680RFKTABC"/>
+<attribute name="TOLERANCE" value="1%"/>
+<attribute name="VALUE" value="680 Ω"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -975,6 +1185,20 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 </package>
 </packages>
 <symbols>
+<symbol name="VREG">
+<wire x1="-5.08" y1="-5.08" x2="5.08" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="5.08" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="-5.08" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-5.08" width="0.4064" layer="94"/>
+<text x="2.54" y="-7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-2.032" y="-4.318" size="1.524" layer="95">GND</text>
+<text x="-4.445" y="-0.635" size="1.524" layer="95">IN</text>
+<text x="0.127" y="-0.635" size="1.524" layer="95">OUT</text>
+<pin name="IN" x="-7.62" y="0" visible="off" length="short" direction="in"/>
+<pin name="GND" x="0" y="-7.62" visible="off" length="short" direction="in" rot="R90"/>
+<pin name="OUT" x="7.62" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
 <symbol name="78ADJ">
 <wire x1="-5.08" y1="-5.08" x2="5.08" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="5.08" y1="-5.08" x2="5.08" y2="2.54" width="0.4064" layer="94"/>
@@ -993,7 +1217,7 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <devicesets>
 <deviceset name="LD1117V33" prefix="IC" uservalue="yes">
 <gates>
-<gate name="G$1" symbol="78ADJ" x="0" y="0"/>
+<gate name="G$1" symbol="VREG" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="TO-220-STANDING">
@@ -1008,9 +1232,34 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <attribute name="MANUFACTURER" value="ST Microelectronics" constant="no"/>
 <attribute name="PACKAGE" value="TO-220" constant="no"/>
 <attribute name="TME" value="LD1117V33" constant="no"/>
-<attribute name="VIN-MAX" value="15 V" constant="no"/>
+<attribute name="VIN-MAX" value="15.0 V" constant="no"/>
 <attribute name="VIN-MIN" value="4.5V" constant="no"/>
 <attribute name="VOUT" value="3.3 V" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="L78S05CV" prefix="IC" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="78ADJ" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO-220-STANDING">
+<connects>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CURRENT" value="2.0 A" constant="no"/>
+<attribute name="MANUFACTURER" value="St Microelectronics" constant="no"/>
+<attribute name="PACKAGE" value="TO-220" constant="no"/>
+<attribute name="TME" value="L78S05CV" constant="no"/>
+<attribute name="VIN-MAX" value="35.0 V" constant="no"/>
+<attribute name="VIN-MIN" value="8.0 V" constant="no"/>
+<attribute name="VOUT" value="5.0 V" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -1029,8 +1278,8 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 </classes>
 <parts>
 <part name="IC1" library="SM-Microchip" deviceset="PIC24F04KA201" device=""/>
-<part name="R1" library="SM-Resistor" deviceset="RESITOR" device="-SMD-0805"/>
-<part name="R2" library="SM-Resistor" deviceset="RESITOR" device="-SMD-0805"/>
+<part name="R1" library="SM-Resistor" deviceset="CRCW0805" device="1K00FKTABC" value="1 kΩ"/>
+<part name="R2" library="SM-Resistor" deviceset="CRCW0805" device="10K0FKTABC" value="10 kΩ"/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="C3" library="SM-Capacitors" deviceset="CAP" device="-SMD-0805"/>
@@ -1050,9 +1299,9 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <part name="LED1" library="SM-LED" deviceset="LED" device="-SMD-0805"/>
 <part name="LED2" library="SM-LED" deviceset="LED" device="-SMD-0805"/>
 <part name="LED3" library="SM-LED" deviceset="LED" device="-SMD-0805"/>
-<part name="R3" library="SM-Resistor" deviceset="RESITOR" device="-SMD-0805"/>
-<part name="R4" library="SM-Resistor" deviceset="RESITOR" device="-SMD-0805"/>
-<part name="R5" library="SM-Resistor" deviceset="RESITOR" device="-SMD-0805"/>
+<part name="R3" library="SM-Resistor" deviceset="CRCW0805" device="680RFKTABC" value="680 Ω"/>
+<part name="R4" library="SM-Resistor" deviceset="CRCW0805" device="270RFKTABC" value="270 Ω"/>
+<part name="R5" library="SM-Resistor" deviceset="CRCW0805" device="2K20FKTABC" value="2.2 kΩ"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
@@ -1069,9 +1318,12 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <part name="JP2" library="SM-PinHeader" deviceset="1X8" device=""/>
 <part name="JP3" library="SM-PinHeader" deviceset="1X8" device=""/>
 <part name="CN1" library="SM-PinHeader" deviceset="1X2" device=""/>
-<part name="IC3" library="SM-VReg" deviceset="LD1117V33" device=""/>
 <part name="JP4" library="SM-Jumper" deviceset="JP-OR" device=""/>
 <part name="JP5" library="SM-Jumper" deviceset="JP-OR" device=""/>
+<part name="IC2" library="SM-VReg" deviceset="LD1117V33" device=""/>
+<part name="IC3" library="SM-VReg" deviceset="L78S05CV" device=""/>
+<part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
+<part name="GND10" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1134,9 +1386,12 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <instance part="JP3" gate="-8" x="58.42" y="0"/>
 <instance part="CN1" gate="-1" x="58.42" y="5.08"/>
 <instance part="CN1" gate="-2" x="58.42" y="10.16"/>
-<instance part="IC3" gate="G$1" x="-68.58" y="127"/>
 <instance part="JP4" gate="G$1" x="-35.56" y="60.96"/>
 <instance part="JP5" gate="G$1" x="-5.08" y="60.96"/>
+<instance part="IC2" gate="G$1" x="-68.58" y="127"/>
+<instance part="IC3" gate="G$1" x="-116.84" y="127"/>
+<instance part="+3V6" gate="G$1" x="60.96" y="20.32" rot="R270"/>
+<instance part="GND10" gate="1" x="60.96" y="15.24" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -1163,13 +1418,18 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <wire x1="-55.88" y1="127" x2="-48.26" y2="127" width="0.1524" layer="91"/>
 <wire x1="-55.88" y1="124.46" x2="-55.88" y2="127" width="0.1524" layer="91"/>
 <junction x="-55.88" y="127"/>
-<pinref part="IC3" gate="G$1" pin="OUT"/>
 <wire x1="-60.96" y1="127" x2="-55.88" y2="127" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="OUT"/>
 </segment>
 <segment>
 <pinref part="LED2" gate="G$1" pin="A"/>
 <pinref part="+3V5" gate="G$1" pin="+3V3"/>
 <wire x1="-114.3" y1="73.66" x2="-114.3" y2="68.58" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="P$20"/>
+<wire x1="53.34" y1="20.32" x2="58.42" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="+3V6" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1192,7 +1452,7 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <pinref part="C2" gate="G$1" pin="P$1"/>
 <wire x1="-55.88" y1="116.84" x2="-68.58" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="GND4" gate="1" pin="GND"/>
-<pinref part="IC3" gate="G$1" pin="GND"/>
+<pinref part="IC2" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="GND5" gate="1" pin="GND"/>
@@ -1220,11 +1480,17 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <pinref part="C9" gate="G$1" pin="P$1"/>
 <wire x1="-104.14" y1="116.84" x2="-116.84" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
+<pinref part="IC3" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
 <pinref part="C1" gate="G$1" pin="P$1"/>
 <wire x1="50.8" y1="55.88" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="P$19"/>
+<wire x1="53.34" y1="15.24" x2="58.42" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="GND10" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="MCLR" class="0">
@@ -1282,7 +1548,7 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <wire x1="-83.82" y1="124.46" x2="-83.82" y2="127" width="0.1524" layer="91"/>
 <junction x="-83.82" y="127"/>
 <pinref part="P+1" gate="1" pin="+12V"/>
-<pinref part="IC3" gate="G$1" pin="IN"/>
+<pinref part="IC2" gate="G$1" pin="IN"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="3"/>
@@ -1301,6 +1567,7 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <wire x1="-132.08" y1="124.46" x2="-132.08" y2="127" width="0.1524" layer="91"/>
 <junction x="-132.08" y="127"/>
 <pinref part="P+4" gate="1" pin="+12V"/>
+<pinref part="IC3" gate="G$1" pin="IN"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -1329,6 +1596,7 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <wire x1="-104.14" y1="124.46" x2="-104.14" y2="127" width="0.1524" layer="91"/>
 <junction x="-104.14" y="127"/>
 <pinref part="P+5" gate="1" pin="+5V"/>
+<pinref part="IC3" gate="G$1" pin="OUT"/>
 </segment>
 <segment>
 <pinref part="P+6" gate="1" pin="+5V"/>

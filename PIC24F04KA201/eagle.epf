@@ -90,7 +90,7 @@ Layer=16
 [Win_2]
 Type="Schematic Editor"
 Loc="532 154 1669 881"
-State=2
+State=0
 Number=2
 File="PIC24F04KA201.v01.sch"
 View="-57.3478 12.4072 73.5497 105.633"
@@ -137,7 +137,7 @@ Sheet=1
 
 [Win_3]
 Type="Control Panel"
-Loc="0 0 943 1001"
+Loc="807 70 1750 1071"
 State=2
 Number=0
 
