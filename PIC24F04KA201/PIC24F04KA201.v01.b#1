@@ -290,6 +290,27 @@ Created by Robert Siegler</description>
 <wire x1="-0.635" y1="-1.27" x2="-1.27" y2="-0.635" width="0.127" layer="21"/>
 <text x="-1.905" y="-1.27" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 </package>
+<package name="1X3">
+<pad name="1" x="-2.54" y="-0.5" drill="1.1" shape="square"/>
+<pad name="2" x="0" y="-0.5" drill="1.1"/>
+<pad name="3" x="2.54" y="-0.5" drill="1.1"/>
+<wire x1="-4" y1="0.5" x2="-4" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="-4" y1="-1.5" x2="-3.5" y2="-2" width="0.127" layer="21"/>
+<wire x1="-3.5" y1="-2" x2="-1.5" y2="-2" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="-2" x2="-1" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="-1" y1="-1.5" x2="-0.5" y2="-2" width="0.127" layer="21"/>
+<wire x1="-0.5" y1="-2" x2="3.5" y2="-2" width="0.127" layer="21"/>
+<wire x1="3.5" y1="-2" x2="4" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="4" y1="-1.5" x2="4" y2="0.5" width="0.127" layer="21"/>
+<wire x1="4" y1="0.5" x2="3.5" y2="1" width="0.127" layer="21"/>
+<wire x1="3.5" y1="1" x2="1.5" y2="1" width="0.127" layer="21"/>
+<wire x1="1.5" y1="1" x2="1" y2="0.5" width="0.127" layer="21"/>
+<wire x1="1" y1="0.5" x2="0.5" y2="1" width="0.127" layer="21"/>
+<wire x1="0.5" y1="1" x2="-3.5" y2="1" width="0.127" layer="21"/>
+<wire x1="-3.5" y1="1" x2="-4" y2="0.5" width="0.127" layer="21"/>
+<text x="-4" y="1.5" size="0.8128" layer="25">&gt;NAME</text>
+<text x="-4" y="-3" size="0.8128" layer="27">&gt;VALUE</text>
+</package>
 </packages>
 </library>
 <library name="SM-PinHeader">
@@ -565,6 +586,8 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VIN-MAX" value="15 V" x="-58.5" y="-5" size="1.778" layer="27" display="off"/>
 <attribute name="VOUT" value="3.3 V" x="-58.5" y="-5" size="1.778" layer="27" display="off"/>
 </element>
+<element name="JP4" library="SM-Jumper" package="1X3" value="" x="-60.5" y="-11"/>
+<element name="JP5" library="SM-Jumper" package="1X3" value="" x="-60.5" y="-16"/>
 </elements>
 <signals>
 <signal name="+3V3">
@@ -621,6 +644,8 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="PGC">
 <contactref element="ISCP1" pad="5"/>
+<contactref element="JP4" pad="2"/>
+<wire x1="34" y1="14.69" x2="-60.5" y2="-11.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+12V">
 <contactref element="C8" pad="2"/>
@@ -657,16 +682,6 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="JP1" pad="1"/>
 <contactref element="C1" pad="2"/>
 <wire x1="24" y1="20" x2="24.45" y2="30" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$2">
-<contactref element="IC1" pad="2"/>
-<contactref element="JP2" pad="2"/>
-<wire x1="39.11" y1="35.19" x2="44.42" y2="29.5" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$3">
-<contactref element="IC1" pad="3"/>
-<contactref element="JP2" pad="3"/>
-<wire x1="41.65" y1="35.19" x2="46.96" y2="29.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="IC1" pad="4"/>
@@ -733,20 +748,41 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="IC1" pad="18"/>
 <wire x1="41.65" y1="42.81" x2="41.25" y2="47.5" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$20">
-<contactref element="JP3" pad="1"/>
-<contactref element="IC1" pad="9"/>
-<wire x1="56.89" y1="35.19" x2="64.62" y2="47.5" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$21">
-<contactref element="JP3" pad="2"/>
-<contactref element="IC1" pad="10"/>
-<wire x1="59.43" y1="35.19" x2="62.08" y2="47.5" width="0" layer="19" extent="1-1"/>
-</signal>
 <signal name="RPIN">
 <contactref element="IC1" pad="1"/>
 <contactref element="R1" pad="2"/>
 <wire x1="30.45" y1="26.5" x2="36.57" y2="35.19" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PGC3">
+<contactref element="JP4" pad="3"/>
+<contactref element="JP3" pad="2"/>
+<contactref element="IC1" pad="10"/>
+<wire x1="59.43" y1="35.19" x2="62.08" y2="47.5" width="0" layer="19" extent="1-1"/>
+<wire x1="-57.96" y1="-11.5" x2="59.43" y2="35.19" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PGD2">
+<contactref element="JP5" pad="1"/>
+<contactref element="IC1" pad="3"/>
+<contactref element="JP2" pad="3"/>
+<wire x1="41.65" y1="35.19" x2="-63.04" y2="-16.5" width="0" layer="19" extent="1-1"/>
+<wire x1="46.96" y1="29.5" x2="41.65" y2="35.19" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PGD">
+<contactref element="JP5" pad="2"/>
+</signal>
+<signal name="PGD3">
+<contactref element="JP5" pad="3"/>
+<contactref element="JP3" pad="1"/>
+<contactref element="IC1" pad="9"/>
+<wire x1="56.89" y1="35.19" x2="64.62" y2="47.5" width="0" layer="19" extent="1-1"/>
+<wire x1="-57.96" y1="-16.5" x2="56.89" y2="35.19" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PGC2">
+<contactref element="JP4" pad="1"/>
+<contactref element="IC1" pad="2"/>
+<contactref element="JP2" pad="2"/>
+<wire x1="39.11" y1="35.19" x2="-63.04" y2="-11.5" width="0" layer="19" extent="1-1"/>
+<wire x1="44.42" y1="29.5" x2="39.11" y2="35.19" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
