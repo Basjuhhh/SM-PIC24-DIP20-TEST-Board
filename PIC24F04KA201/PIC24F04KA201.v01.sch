@@ -1256,6 +1256,11 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <wire x1="-17.78" y1="78.74" x2="-40.64" y2="78.74" width="0.1524" layer="91"/>
 <label x="-40.64" y="78.74" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="JP5" gate="G$1" pin="P$3"/>
+<wire x1="-5.08" y1="53.34" x2="-5.08" y2="50.8" width="0.1524" layer="91"/>
+<label x="-5.08" y="50.8" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="PGC" class="0">
 <segment>
@@ -1465,13 +1470,6 @@ Type: &lt;b&gt;SPC4077 / SPC 4078&lt;/b&gt;&lt;p&gt;</description>
 <pinref part="JP2" gate="-3" pin="P$1"/>
 <wire x1="-83.82" y1="10.16" x2="-50.8" y2="10.16" width="0.1524" layer="91"/>
 <label x="-78.74" y="10.16" size="1.778" layer="95" rot="R270" xref="yes"/>
-</segment>
-</net>
-<net name="PGD" class="0">
-<segment>
-<pinref part="JP5" gate="G$1" pin="P$3"/>
-<wire x1="-5.08" y1="53.34" x2="-5.08" y2="50.8" width="0.1524" layer="91"/>
-<label x="-5.08" y="50.8" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="PGD3" class="0">
